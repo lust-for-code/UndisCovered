@@ -1,0 +1,86 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead"><i class="fas fa-globe-asia"></i> UndisCovered</p>
+            <div class="list-group">
+                <a class="list-group-item list-group-item-info active" href="/user/<%= user._id %>">Profile</a>
+                <% if(currentUser && user._id.equals(currentUser._id)){ %>
+                    <a class="list-group-item list-group-item-info" href="/user/<%= user._id %>/edit">Edit Profile</a>
+                <% } else { %>
+                    <a class="list-group-item list-group-item-info" href="/user/<%= currentUser._id %>">Your Profile</a>
+                <%}%>
+
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="thumbnail profilebg">
+                    <div class="profile-header-container">   
+                            <div class="profile-header-img">
+                                <img class="img-circle" src="<%= user.dp %>" />
+                                <!-- badge -->
+                                <div class="rank-label-container">
+                                    <span class="label label-default rank-label"><%= user.fname+" "+user.lname %></span>
+                                </div>
+                            </div>
+                    </div>
+                    <!-- <img class="img-responsive" src="<%= currentUser.dp %>">
+                    <div class="caption-full"> -->
+                    <!-- <h4 class="pull-right">$9.0/night</h4> -->
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Personal Details</h3>
+                    </div>
+                        <div class="panel-body ">
+                          <h2><%= user.fname+" "+user.lname %></a></h2>
+                        </div>
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <h4><strong class="text-info"><i class="fas fa-user "></i> Username:</strong></h4> 
+                                </td>
+                                <td>
+                                    <h4><strong><%= user.username %></strong> </h4> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4><strong class="text-info"><i class="fas fa-birthday-cake "></i> DOB:</strong></h4> 
+                                </td>
+                                <td>
+                                    <h4><strong><%= user.dob.toLocaleDateString() %></strong> </h4> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4><strong class="text-info"><i class="fas fa-map-marker-alt "></i> Place:</strong></h4> 
+                                </td>
+                                <td>
+                                    <h4><strong><%= user.place %></strong> </h4> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4><strong class="text-info"><i class="fas fa-mobile-alt "></i> Phone:</strong></h4> 
+                                </td>
+                                <td>
+                                    <h4><strong><%= user.phone %></strong> </h4> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4><strong class="text-info"><i class="fas fa-envelope"></i> Email:</strong></h4> 
+                                </td>
+                                <td>
+                                    <h4><strong><%= user.email %></strong> </h4> 
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>

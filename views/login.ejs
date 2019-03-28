@@ -1,0 +1,22 @@
+<% include partials/header %> 
+    
+    <div class="container">
+        <div class="row">
+            <h1 style="text-align:center">Login to UndisCovered</h1>
+            <div style="width: 30%; margin: 25px auto;">
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-info btn-block">Login</button>
+                    </div>
+                </form>
+                <p>Not Signed Up ? <a href="/register %>">SIGN UP</a></p>
+            </div>
+        </div>
+    </div>
+<% include partials/footer %>

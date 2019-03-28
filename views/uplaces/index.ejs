@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+    <header class="jumbotron">
+        <div class="container">
+            <h1><i class="fas fa-globe-asia"></i> Welcome to UndisCovered</h1>
+            <p>Discover the unknown in the world !</p>
+            <p>
+                <a class="btn btn-info btn-lg" href="/uplaces/new"><i class="fas fa-globe-asia"></i> Add An UndiCovered Place</a>
+            </p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+                <% uplaces.forEach(function(uplace){ %>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="thumbnail">
+                                <img src="<%= uplace.image %>">
+                                <div class="caption">
+                                        <h4><strong><%= uplace.name %></strong></h4> 
+                                        <%= uplace.place %>
+                                </div>
+                                <p>
+                                    <a class="btn btn-md btn-info" href="/uplaces/<%=uplace._id%>"><i class="fas fa-globe-asia"></i> MORE INFO</a>
+                                </p>
+                        </div>
+                    </div>
+            
+                <% }); %>
+        </div>
+    </div>
+    
+
+
+<% include ../partials/footer %>
